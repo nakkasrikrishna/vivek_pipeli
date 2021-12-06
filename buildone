@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('latest code') {
             steps {
-                
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/nakkasrikrishna/vivek_pipeli.git']]])
             }
         }
         stage ('Build stage') {
